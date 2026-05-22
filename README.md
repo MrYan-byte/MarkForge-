@@ -7,6 +7,14 @@ MarkForge 现在是前后端分离结构：
 
 ## 后端启动
 
+IDE 中直接运行：
+
+```text
+D:\yan\MarkForge\backend\run.py
+```
+
+命令行启动：
+
 ```powershell
 cd D:\yan\MarkForge
 python -m pip install -r backend\requirements.txt
