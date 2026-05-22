@@ -1,0 +1,47 @@
+{
+  "name": "markforge-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Desktop Markdown editor and PDF viewer with export/conversion tools.",
+  "main": "dist-electron/main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5173",
+    "dev:electron": "concurrently -k \"npm:dev\" \"npm:electron\"",
+    "electron": "wait-on http://127.0.0.1:5173 && tsc -p tsconfig.electron.json && electron .",
+    "build": "tsc -p tsconfig.json && vite build && tsc -p tsconfig.electron.json",
+    "preview": "vite preview --host 127.0.0.1 --port 4173",
+    "lint": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
+    "@vitejs/plugin-react": "^5.1.1",
+    "axios": "^1.13.2",
+    "clsx": "^2.1.1",
+    "electron-is-dev": "^3.0.1",
+    "highlight.js": "^11.11.1",
+    "katex": "^0.16.25",
+    "lucide-react": "^0.556.0",
+    "markdown-it": "^14.1.0",
+    "markdown-it-anchor": "^9.2.0",
+    "markdown-it-highlightjs": "^4.2.0",
+    "markdown-it-katex": "^2.0.3",
+    "markdown-it-task-lists": "^2.1.1",
+    "monaco-editor": "^0.55.1",
+    "pdfjs-dist": "^5.4.394",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "react-pdf": "^10.2.0"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "concurrently": "^9.2.1",
+    "electron": "^39.2.4",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.6",
+    "wait-on": "^9.0.3"
+  }
+}
